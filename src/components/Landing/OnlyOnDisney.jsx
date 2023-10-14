@@ -6,7 +6,7 @@ export default function OnlyOnDisney() {
   return (
     <div
       id="onlyondisney"
-      className="flex flex-col md:flex-row justify-center items-center bg-[#040714] overflow-x-hidden"
+      className="flex flex-col md:flex-row justify-center items-center bg-[#040714] "
     >
       <div className="flex flex-col justify-center items-center md:items-start md:ml-20 z-10">
         <h1 className="text-white text-center md:text-left text-xl sm:text-5xl font-extrabold mb-4 w-[400px]">
@@ -17,7 +17,7 @@ export default function OnlyOnDisney() {
           streaming service.
         </p>
       </div>
-      <div className="w-full overflow-hidden">
+      <div className="w-full ">
         <img
           className="w-full h-full hidden md:block object-cover rounded-xl shadow-xl"
           src={onlyon}
