@@ -10,7 +10,7 @@ export default function FrequentlyAskedQuestions() {
   };
 
   return (
-    <div className="text-white p-20 min-h-screen">
+    <div className="text-white p-20  ">
       <h2 className="text-4xl leading-tight font-bold text-center mb-12">
         Frequently Asked Questions
       </h2>
