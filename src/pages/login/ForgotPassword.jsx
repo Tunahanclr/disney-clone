@@ -1,9 +1,9 @@
 import React,{useEffect,useState} from 'react'
 import Loading from '../../components/shared/Loading'
-import Navbar from '../../components/login/Navbar'
-import Login from '../../components/login/Login'
-import AuthFooter from "../../components/shared/AuthFooter"
-export default function login() {
+import AuthFooter from '../../components/shared/AuthFooter'
+import ForgotPassword from '../../components/ForgotPassword/ForgotPassword'
+
+export default function () {
   const [loading,setLoading]=useState(false)
 useEffect(() => {
   setLoading(true)
@@ -17,9 +17,9 @@ setTimeout(()=>{
     {
       loading&&<Loading/>
     }
-  <Navbar/>
-  <Login/>
-    <AuthFooter/>
+
+  <ForgotPassword/>
+  <AuthFooter/>
     </div>
   )
 }

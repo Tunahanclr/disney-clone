@@ -3,6 +3,7 @@ import Landing from "../pages/LandingPage/Landing";
 import Login from "../pages/login/login";
 import Signup from "../pages/Signup/Signup";
 import Home from "../pages/home/Home";
+import ForgotPassword from "../pages/login/ForgotPassword";
 
 export const CustomRouter = [
   {
@@ -25,4 +26,8 @@ export const CustomRouter = [
     path: "*",
     element: <Notfound />,
   },
+  {
+    path:'/forgot-password',
+    element:<ForgotPassword/>
+  }
 ];
