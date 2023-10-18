@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { CustomRouter } from "./router/CustomRouter";
 
 function App() {
+  
   return (
     <Router>
       <Routes>

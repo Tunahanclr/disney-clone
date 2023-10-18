@@ -2,9 +2,11 @@ import React, { useCallback, useState } from "react";
 import { auth } from "../../firebase";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom/dist";
+import { ToastContainer, toast } from "react-toastify";
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
-
+  const navigate = useNavigate("");
   const handleSubmit = useCallback(
     (e) => {
       e.preventDefault();
@@ -13,16 +15,22 @@ export default function ForgotPassword() {
       }
       sendPasswordResetEmail(auth, email)
         .then(() => {
-            alert('maile bak')
+          toast.success(
+            "    Check your email box you will be redirected to the login page."
+          );
+          setTimeout(() => {
+            navigate("/login");
+          }, 3000);
         })
         .catch((e) => {
-                console.log(e)
+          toast.error(e.message);
         });
     },
     [email]
   );
   return (
     <div className="h-[89vh] p-2 flex flex-col items-center">
+      <ToastContainer />
       <div className="mt-9 w-full max-w-md sm:max-w-sm">
         <div>
           <img

@@ -10,6 +10,7 @@ export const CustomRouter = [
     path: "/",
     element: <Landing />,
   },
+  
   {
     path: "/login",
     element: <Login />,

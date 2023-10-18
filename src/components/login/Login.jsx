@@ -1,8 +1,10 @@
 import React, { useCallback } from "react";
 import { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import {Link} from "react-router-dom"
+import { signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { Link } from "react-router-dom";
 import { auth } from "../../firebase";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom/dist";
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -11,17 +13,19 @@ export default function Login() {
   const navigate = useNavigate();
   const handleSubmit = useCallback(
     (e) => {
-      if (!email || !password){
+      if (!email || !password) {
         return;
       }
-       e.preventDefault();
+      e.preventDefault();
       signInWithEmailAndPassword(auth, email, password)
         .then(() => {
-          navigate("/home");
-          alert("hey you");
+          toast.success("Login successful");
+          setTimeout(() => {
+            navigate("/home");
+          }, 2000);
         })
         .catch((e) => {
-          console.log(e);
+          toast.error(e.message);
         });
     },
     [email, password]
@@ -29,6 +33,7 @@ export default function Login() {
   return (
     <div>
       <div className="h-[89vh] p-2 flex flex-col items-center">
+        <ToastContainer />
         <div className="mt-9 w-full max-w-md sm:max-w-sm">
           <p className="text-[#cacaca] text-xs sm:text-[11px] text-left"></p>
           <div>
@@ -69,8 +74,13 @@ export default function Login() {
                 Login
               </button>
               <div className="mt-4">
-            <Link to='/forgot-password' className=" text-[14px] text-blue-600 hover:underline transition-all cursor-pointer">Forgot Password?</Link>
-                  </div>
+                <Link
+                  to="/forgot-password"
+                  className=" text-[14px] text-blue-600 hover:underline transition-all cursor-pointer"
+                >
+                  Forgot Password?
+                </Link>
+              </div>
             </form>
 
             <div />
