@@ -2,12 +2,7 @@ import React, { useCallback, useState } from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../../firebase";
 import { Link } from "react-router-dom";
-import {
-  getStorage,
-  ref,
-  uploadBytesResumable,
-  getDownloadURL,
-} from "firebase/storage";
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom/dist";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -100,16 +95,11 @@ export default function Signup() {
             {step == 1 && (
               <>
                 <h3 className="text-lg mt-2 sm:text-xl md:text-2xl leading-tight text-[#f9f9f9] mb-4 font-bold">
-                  Enter your name
-                </h3>
-                <p className="text-[#f9f9f9] mt-2 text-xs sm:text-sm md:text-sm leading-6 ">
-                  Join the world of Disney+ by creating your own unique
-                  username. Be part of your favorite heroes, magical kingdoms,
-                  and unforgettable moments. The username you choose will
-                  transport you to the magical world of Disney every time you
-                  log in. So think about which character or story represents you
-                  best and join us!
-                </p>
+            Enter your name
+          </h3>
+          <p className="text-[#f9f9f9] mt-2 text-xs sm:text-sm md:text-sm leading-6 ">
+          Join the world of Disney+ by creating your own unique username. Be part of your favorite heroes, magical kingdoms, and unforgettable moments. The username you choose will transport you to the magical world of Disney every time you log in. So think about which character or story represents you best and join us!
+          </p>
                 <input
                   className="bg-[#31343e]  mt-3 focus:border-gray-500 text-[12px] sm:text-[15px] text-white border border-transparent transition-all h-[40px] sm:h-[48px] outline-none rounded w-full py-1 sm:py-2 px-2 sm:px-3"
                   placeholder="Enter your name"
@@ -124,13 +114,12 @@ export default function Signup() {
             )}
             {step == 2 && (
               <>
-                <h3 className="text-lg mt-2 sm:text-xl md:text-2xl leading-tight text-[#f9f9f9] mb-4 font-bold">
-                  Enter your email
-                </h3>
-                <p className="text-[#f9f9f9] mt-2 text-xs sm:text-sm md:text-sm leading-6 ">
-                  You will use this email and password to log into your Disney+
-                  account to watch your favourite shows and movies.
-                </p>
+                   <h3 className="text-lg mt-2 sm:text-xl md:text-2xl leading-tight text-[#f9f9f9] mb-4 font-bold">
+            Enter your email
+          </h3>
+          <p className="text-[#f9f9f9] mt-2 text-xs sm:text-sm md:text-sm leading-6 ">
+          You will use this email and password to log into your Disney+ account to watch your favourite shows and movies.
+          </p>
                 <input
                   className="bg-[#31343e]  mt-3 focus:border-gray-500 text-[12px] sm:text-[15px] text-white border border-transparent transition-all h-[40px] sm:h-[48px] outline-none rounded w-full py-1 sm:py-2 px-2 sm:px-3"
                   placeholder="Enter your email"
@@ -145,13 +134,12 @@ export default function Signup() {
             )}
             {step == 3 && (
               <>
-                <h3 className="text-lg mt-2 sm:text-xl md:text-2xl leading-tight text-[#f9f9f9] mb-4 font-bold">
-                  Enter your password
-                </h3>
-                <p className="text-[#f9f9f9] mt-2 text-xs sm:text-sm md:text-sm leading-6 ">
-                  You will use this email and password to log into your Disney+
-                  account to watch your favourite shows and movies.
-                </p>
+                  <h3 className="text-lg mt-2 sm:text-xl md:text-2xl leading-tight text-[#f9f9f9] mb-4 font-bold">
+            Enter your password
+          </h3>
+               <p className="text-[#f9f9f9] mt-2 text-xs sm:text-sm md:text-sm leading-6 ">
+               You will use this email and password to log into your Disney+ account to watch your favourite shows and movies.
+          </p>
                 <div className="relative">
                   <input
                     className="bg-[#31343e]  mt-3 focus:border-gray-500 text-[12px] sm:text-[15px] text-white border border-transparent transition-all h-[40px] sm:h-[48px] outline-none rounded w-full py-1 sm:py-2 px-2 sm:px-3"

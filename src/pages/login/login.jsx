@@ -12,7 +12,7 @@ setTimeout(()=>{
 },1000)
 }, [])
 
-  return (
+return (
     <div className='bg-[#1A1D29]'>
     {
       loading&&<Loading/>

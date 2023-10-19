@@ -4,6 +4,9 @@ export default {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],  theme: {
     extend: {
+      screens:{
+          'md':"840px",
+      },
       keyframes: {
         spin: {
           '0%': { transform: 'rotate(0deg)' },
