@@ -5,6 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
 import Loading from "../../components/shared/Loading";
 import Header from "../../components/home/Header";
+import Slider from "../../components/home/Slider";
 export default function Home() {
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
@@ -28,6 +29,7 @@ export default function Home() {
       {user ? (
         <div className="bg-[#1a1d29] h-screen" >
           <Header />
+          <Slider/>
         </div>
       ) : (
         <Loading />
