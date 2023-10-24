@@ -6,6 +6,7 @@ import { signOut } from "firebase/auth";
 import Loading from "../../components/shared/Loading";
 import Header from "../../components/home/Header";
 import Slider from "../../components/home/Slider";
+import ProductionHouse from "../../components/home/ProductionHouse";
 export default function Home() {
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
@@ -30,6 +31,7 @@ export default function Home() {
         <div className="bg-[#1a1d29] h-screen" >
           <Header />
           <Slider/>
+          <ProductionHouse/>
         </div>
       ) : (
         <Loading />

@@ -48,7 +48,7 @@ export default function Signup() {
           toast.error(e.message);
         });
     },
-    [email, password, name, files]
+    [email, password, name]
   );
 
   const nextStep = (e) => {
@@ -106,7 +106,7 @@ export default function Signup() {
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                />
+                />https://www.youtube.com/watch?v=SrIg3MSCaoM&list=WL&index=2
                 {nameError && (
                   <div className="text-red-500 text-xs mt-2">{nameError}</div>
                 )}

@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import { useState } from "react";
-import { signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase";
 import { ToastContainer, toast } from "react-toastify";
